@@ -1,14 +1,8 @@
 const {argv} = require('node:process');
 let num = Number(argv[2]);
-let fact = 1;
-function calFact(num){
-fact *= num;
-num -= 1;
-if(num === 1){
-return fact;
-} else{
-return calFact(num);
-}
+function calFact(n){
+if(n <= 1) return 1;
+return n * calFact(n - 1);
 }
 if(Number.isNaN(num) || num === 0){
 console.log(1);
